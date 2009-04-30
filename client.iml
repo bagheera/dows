@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module relativePaths="true" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="false">
+    <output url="file:///d/mycode/book_lookup/client/build/classes" />
+    <exclude-output />
+    <output-test url="file:///d/mycode/book_lookup/out/test/client" />
+    <content url="file:///d/mycode/book_lookup/client">
+      <sourceFolder url="file:///d/mycode/book_lookup/client/src" isTestSource="false" />
+      <sourceFolder url="file:///d/mycode/book_lookup/client/test" isTestSource="true" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" exported="" name="xfire" level="project" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/junit-4.4.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntryProperties />
+  </component>
+</module>
+

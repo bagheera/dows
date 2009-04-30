@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="var" path="XFIRE/modules/cxf-manifest.jar"/>
+	<classpathentry kind="var" path="XFIRE/lib/jaxb-api-2.1.jar"/>
+	<classpathentry kind="var" path="XFIRE/modules/cxf-rt-frontend-jaxrs-2.1.3.jar"/>
+	<classpathentry kind="var" path="XFIRE/modules/cxf-rt-frontend-jaxws-2.1.3.jar"/>
+	<classpathentry kind="var" path="XFIRE/modules/cxf-rt-core-2.1.3.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

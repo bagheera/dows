@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:tns="http://www.doc-oriented-ws.org/BookLookup/"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	name="BookLookup"
+	targetNamespace="http://www.doc-oriented-ws.org/BookLookup/">
+
+	<wsdl:types>
+		<xsd:schema>
+			<xsd:import
+				namespace="http://www.doc-oriented-ws.org/BookLookup/"
+				schemaLocation="BookLookup.xsd" />
+			<xsd:import
+				namespace="http://www.doc-oriented-ws.org/BookLookup/"
+				schemaLocation="TestBookLookup.xsd" />
+		</xsd:schema>
+	</wsdl:types>
+
+	<wsdl:message
+		name="LookupRequest">
+		<wsdl:part
+			element="tns:LookupRequest"
+			name="LookupRequest" />
+	</wsdl:message>
+
+	<wsdl:message
+		name="LookupResponse">
+		<wsdl:part
+			element="tns:LookupResponse"
+			name="LookupResponse" />
+	</wsdl:message>
+
+	<wsdl:message
+		name="DBcsv">
+		<wsdl:part
+			name="DBcsvpart"
+			element="tns:DBcsvee"></wsdl:part>
+	</wsdl:message>
+
+	<wsdl:portType
+		name="BookLookup">
+		<wsdl:operation
+			name="process">
+			<wsdl:input
+				message="tns:LookupRequest" />
+			<wsdl:output
+				message="tns:LookupResponse" />
+		</wsdl:operation>
+	</wsdl:portType>
+
+	<wsdl:portType
+		name="TestBookLookup">
+		<wsdl:operation
+			name="setupBooks">
+			<wsdl:input
+				message="tns:DBcsv" />
+		</wsdl:operation>
+	</wsdl:portType>
+
+	<wsdl:binding
+		name="BookLookupSOAP"
+		type="tns:BookLookup">
+		<soap:binding
+			style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation
+			name="process">
+			<soap:operation
+				soapAction="http://www.doc-oriented-ws.org/BookLookup/process" />
+			<wsdl:input>
+				<soap:body
+					use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body
+					use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+
+	<wsdl:binding
+		name="TestBookLookupSOAP"
+		type="tns:TestBookLookup">
+		<soap:binding
+			style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation
+			name="setupBooks">
+			<soap:operation
+				soapAction="http://www.doc-oriented-ws.org/TestBookLookup/setupBooks" />
+			<wsdl:input>
+				<soap:body
+					use="literal" />
+			</wsdl:input>
+		</wsdl:operation>
+	</wsdl:binding>
+
+
+	<wsdl:service
+		name="BookLookup">
+		<wsdl:port
+			binding="tns:BookLookupSOAP"
+			name="BookLookupPort">
+			<soap:address
+				location="http://localhost:9009/cxf/book_lookup/" />
+		</wsdl:port>
+		<wsdl:port
+			binding="tns:TestBookLookupSOAP"
+			name="TestBookLookupPort">
+			<soap:address
+				location="http://localhost:9009/cxf/test_book_lookup/" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>
